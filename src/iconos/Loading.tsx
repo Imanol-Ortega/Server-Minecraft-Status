@@ -6,9 +6,9 @@ export const Loading = () => (
     height="100"
     ><g
         ><circle
-            stroke-dasharray="160.22122533307947 55.40707511102649"
+            strokeDasharray="160.22122533307947 55.40707511102649"
             r="34"
-            stroke-width="7"
+            strokeWidth="7"
             stroke="#000000"
             fill="none"
             cy="50"
