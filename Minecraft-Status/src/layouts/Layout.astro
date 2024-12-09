@@ -1,0 +1,29 @@
+---
+import MinecraftStatus from "@/components/MinecraftStatus.jsx";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Minecraft Status</title>
+    </head>
+    <body>
+        <div class="">
+            <div class="rounded-lg overflow-y-auto h-screen">
+                <MinecraftStatus client:load />
+            </div>
+        </div>
+    </body>
+</html>
+<style is:global>
+    html {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background: #010101;
+        color: white;
+    }
+</style>
