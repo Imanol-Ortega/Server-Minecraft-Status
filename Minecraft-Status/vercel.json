@@ -1,0 +1,8 @@
+{
+    "builds": [
+      {
+        "src": "astro.config.mjs",
+        "use": "@astrojs/vercel/serverless"
+      }
+    ]
+  }
