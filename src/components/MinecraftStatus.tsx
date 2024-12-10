@@ -25,7 +25,7 @@ function MinecraftStatus() {
             <section>
                 <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
                     <hgroup>
-                        <h1 className="text-4xl font-sans font-semibold">Minecraft Server Status</h1>
+                        <h1 className="text-4xl font-sans font-semibold">Minecraft Server Status<p className="text-xs text-red-600 font-thin">By Imanol</p></h1>
                         <p className="text-base font-light p-1 mt-2">Recupera rápidamente el estado de cualquier servidor de Minecraft</p>
                     </hgroup>
                 </div>
