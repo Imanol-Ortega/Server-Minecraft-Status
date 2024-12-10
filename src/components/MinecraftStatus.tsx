@@ -12,6 +12,7 @@ function MinecraftStatus() {
                 const tp = await getStatus();
                 setStatus(tp)
                 setIsLoading(true)
+                console.log(status?.players.list)
             } catch (error) {
                 console.error(error) 
             }
@@ -20,7 +21,7 @@ function MinecraftStatus() {
     },[])
   return (
     <div className="h-full flex">
-        <div className="dark:bg-neutral-900 dark:text-white overflow-x-hidden scroll-smooth w-[900px] h-[700px] m-auto p-10">
+        <div className="dark:bg-neutral-900 dark:text-white overflow-x-hidden scroll-smooth w-[900px] h-[800px] m-auto p-10">
             <section>
                 <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
                     <hgroup>
@@ -40,7 +41,18 @@ function MinecraftStatus() {
                                 <>
                                     <SpanLine title="MOTD" description={status?.motd.raw} classDesc="block bg-black rounded text-white p-5 w-full overflow-x-auto "/>
                                     <SpanLine title="Versión" description={status?.version.name_clean} classDesc=""/>
-                                    <SpanLine title="Jugadores" description={`${status?.players.online}/${status?.players.max}`} classDesc=""/>
+                                    <SpanLine title="Jugadores" description={`${status?.players.online}/${status?.players.max}`} classDesc="text-red-700"/>
+                                    { status.players.online != 0 && 
+                                        <div className="block">
+                                            <pre className="blok bg-black rounded text-white p-5 w-full overflow-x-auto mt-3 flex flex-row justify-start flex-wrap">
+                                                {
+                                                    status.players.list.map((player) => (
+                                                        <span className="text-sm rounded px-2 py-1 bg-lime-800 text-white text-opacity-100 bg-opacity-100" key={player.uuid}>{player.name_clean}</span>
+                                                    ))
+                                                }
+                                            </pre>
+                                        </div>
+                                    }
                                     <SpanLine title="Mods" description="YES" classDesc="" />
                                     <SpanLine title="Plugins" description="N/A" classDesc=""/>
                                 </>
