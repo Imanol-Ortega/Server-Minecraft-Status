@@ -43,11 +43,11 @@ function MinecraftStatus() {
                                     <SpanLine title="Versión" description={status?.version.name_clean} classDesc=""/>
                                     <SpanLine title="Jugadores" description={`${status?.players.online}/${status?.players.max}`} classDesc="text-red-700"/>
                                     { status.players.online != 0 && 
-                                        <div className="block">
-                                            <pre className="blok bg-black rounded text-white p-5 w-full overflow-x-auto mt-3 flex flex-row justify-start flex-wrap">
+                                        <div className="block ">
+                                            <pre className="flex flex-row justify-items-start flex-wrap bg-black rounded text-white p-5 w-full overflow-x-auto mt-3 gap-2">
                                                 {
                                                     status.players.list.map((player) => (
-                                                        <span className="text-sm rounded px-2 py-1 bg-lime-800 text-white text-opacity-100 bg-opacity-100" key={player.uuid}>{player.name_clean}</span>
+                                                        <span className="text-sm rounded px-2 py-1 bg-lime-800 text-gray-300 text-opacity-100 bg-opacity-100" key={player.uuid}>{player.name_clean}</span>
                                                     ))
                                                 }
                                             </pre>
